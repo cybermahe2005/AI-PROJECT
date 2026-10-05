@@ -1,0 +1,101 @@
+/*ANIMATED GRADIENT BACKGROUND*/
+.animated-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #0f2027,
+    #203a43,
+    #2c5364,
+    #1a2980,
+    #26d0ce
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 16s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* FLOATING BLOBS*/
+
+.bg-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #6f7bf7, #4f46e5);
+  opacity: 0.25;
+  filter: blur(90px);
+  border-radius: 50%;
+  animation: float 18s ease-in-out infinite;
+}
+
+.blob:nth-child(1) {
+  top: 10%;
+  left: 15%;
+}
+
+.blob:nth-child(2) {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+.blob:nth-child(3) {
+  top: 40%;
+  right: 30%;
+  animation-delay: 8s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+  100% { transform: translateY(0); }
+}
+
+/* GLASS CARD (Your Main UI) */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #fff;
+}
+
+.light-input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  color: #1f2937 !important;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.light-input::placeholder {
+  color: #6b7280;
+}
+
+.light-input:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+  outline: none;
+}
